@@ -67,3 +67,60 @@ router.get("/signout", (req, res) => {
 > http://localhost:3000/api/auth/signin => {"data": "the signin endpoint"}
 
 > http://localhost:3000/api/auth/signout => {"data": "the signout endpoint"}
+
+## controllers
+
+1. créer le dossier controllers dans api
+
+2. créer le fichier authController.js
+
+3. modifier authRoute.js
+
+````
+import express from "express";
+import {signin, signout, signup} from '../controllers/authController.js';
+
+const router = express.Router();
+
+router.post('/signup', signup);
+router.post('/signin', signin);
+router.get('/signout', signout);
+
+export default router;
+````
+
+4. authController.js
+
+````
+
+
+export const signup = async (req, res, next) =>{
+    res.json({
+        data: "the signup endpoint",
+    });
+};
+
+export const signin = async (req, res, next) =>{
+    res.json({
+        data: "the signin endpoint",
+    });
+};
+
+export const signout = (req, res) => {
+    res.json({
+        data: "the signout endpoint",
+    });
+};
+````
+
+5. test 
+
+http://localhost:3000/api/auth/signout => {"data": "the signout endpoint"}
+
+pour les routes post:
+
+> avec  l'extension thunder client :
+
+- POST : http://localhost:3000/api/auth/signin => status 200 ok et {"data": "the signin endpoint"}
+
+- POST : http://localhost:3000/api/auth/signup => status 200 ok et {"data": "the signup endpoint"}
