@@ -8,4 +8,17 @@ router.get("/signup", (req, res) => {
     });
 });
 
+router.get("/signin", (req, res) => {
+    res.json({
+        data: "the signin endpoint",
+    });
+});
+
+
+router.get("/signout", (req, res) => {
+    res.json({
+        data: "the signout endpoint",
+    });
+});
+
 export default router;

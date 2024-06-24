@@ -40,3 +40,30 @@ app.get('/', function(req, res) {
 // Router qui gèrent les requêtes HTTP 
 app.use("/api/auth", authRoutes);  
 ````
+
+4. test navigateur
+
+> http://localhost:3000/api/auth/signup => {"data":"the signup endpoint"}
+
+ps: **JSON Viewer Pro** permet de voir les responses JSON de manière stylisée et struturée.
+
+5. écrire pour signin et signout puis tester
+
+````
+router.get("/signin", (req, res) => {
+    res.json({
+        data: "the signin endpoint",
+    });
+});
+
+
+router.get("/signout", (req, res) => {
+    res.json({
+        data: "the signout endpoint",
+    });
+});
+````
+
+> http://localhost:3000/api/auth/signin => {"data": "the signin endpoint"}
+
+> http://localhost:3000/api/auth/signout => {"data": "the signout endpoint"}
