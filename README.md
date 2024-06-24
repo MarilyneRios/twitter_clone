@@ -91,4 +91,5 @@ Ce mettre à la racine du projet puis : **nodemon api/index.js**
 > Dans le navigateur : http://localhost:3000/ => hello world
 
 > Dans la console => server is running on port 3000# twitter_clone
-# twitter_clone
+
+### La base de l'app est prête
