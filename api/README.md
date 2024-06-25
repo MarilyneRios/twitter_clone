@@ -124,3 +124,41 @@ pour les routes post:
 - POST : http://localhost:3000/api/auth/signin => status 200 ok et {"data": "the signin endpoint"}
 
 - POST : http://localhost:3000/api/auth/signup => status 200 ok et {"data": "the signup endpoint"}
+
+## DataBase mongoDB
+
+1. Dossier config dans api
+
+2. db.js
+
+````
+import mongoose from 'mongoose';
+
+const connectDB = async () => {
+try {
+    const conn = await mongoose.connect(process.env.VITE_DB_CONNECTION_STRING);
+    console.log(`MongoDB Connected: ${conn.connection.host}`);
+} catch (error) {
+    console.error(`Error: ${error.message}`);
+    process.exit(1);
+}
+};
+
+ export default connectDB;
+````
+
+3. index.js
+
+````
+import dotenv from 'dotenv';
+import connectDB from './config/db.js';
+//------
+dotenv.config();
+connectDB();
+
+````
+
+4. .env à la racine du projet avec gitignore
+
+
+VITE_DB_CONNECTION_STRING="votre lien de connexion mongoDB"
