@@ -33,9 +33,8 @@ npm create vite@latest .
   npm install
   npm run dev
 
-## installation backend dans api
+## installation backend à la racine
 
-- cd api
 - npm init -y
 
 Wrote to C:\Projets training\Twitter_Clone\api\package.json:
